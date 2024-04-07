@@ -60,6 +60,7 @@ export function getAccessibleLabelForStatus (originalAccount, account, plainText
   const values = [
     getNotificationText(notification, omitEmojiInDisplayNames),
     originalAccountDisplayName,
+    getReblogText(reblog, account, omitEmojiInDisplayNames),
     contentTextToShow,
     mediaTextToShow,
     ...mediaDescText,
@@ -67,7 +68,6 @@ export function getAccessibleLabelForStatus (originalAccount, account, plainText
     shortInlineFormattedDate,
     `@${originalAccount.acct}`,
     privacyText,
-    getReblogText(reblog, account, omitEmojiInDisplayNames)
   ].filter(Boolean)
 
   return values.join(', ')
